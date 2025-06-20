@@ -4,11 +4,10 @@ import requests
 import sys
 
 for word in sys.stdin:
-    res = requests.get(url=f"https://catfact.ninja/{word}")
-    print(f"https://catfact.ninja/{word}")
-    print(word)
-    print(res)
-    print(res.json())
-
+    fix_word = word.strip()
+    res = requests.get(url=f"https://catfact.ninja/{fix_word}")
+    if res.status_code == 200:
+        print(f"{fix_word}")
+        print(res)
 
 
