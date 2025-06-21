@@ -13,7 +13,8 @@ def get_page(url):
     for i in a_tags:
         link = i.get("href")
         if wiki in link:
-            if "https" not in link and "en.https://en.wikipedia.org/wiki/Dog" not in link:
-                print(link)
+            if "https" not in link and "en." not in link:
+                link = url_add + link
+            print(link)
 
 get_page(input("Website: "))
