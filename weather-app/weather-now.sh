@@ -6,6 +6,17 @@ format_date () {
   echo "$( date -d @$1 '+| %a %b %d ~ %I:%M %p |' )"  
 }
 
+center() {
+    value="$1"
+    width=$(( ( COLUMNS - ${#value} ) / 2 ))
+    if (( width > 0 )); then
+        printf "%*s%s\n" "$width" "" "$value"
+    else
+        echo "$value"
+    fi
+}
+
+
 format_time () {
   echo "$( date -d @$1 '+%I:%M %p' )"
 }
@@ -49,26 +60,25 @@ am="AM"
 pm="PM"
 
 figlet -c -f 'ANSI Shadow' -t WEATHER
+center "$( format_date $time )"
 echo " "
-echo "              $( format_date $time )"
+center "Home"
+center "Temp: ${my_current_temp}${fahrenheit}"
+center "Feels Like: ${my_feels_like}${fahrenheit}"
+center  "$my_current_desc outside"
 echo " "
-echo "                         Home"
-echo "                   Temp: ${my_current_temp}${fahrenheit}"
-echo "             Feels Like: ${my_feels_like}${fahrenheit}"
-echo "                  $my_current_desc outside"
+center "Work"
+center "Temp: ${store_current_temp}${fahrenheit}"
+center "Feels Like: ${store_feels_like}${fahrenheit}"
+center "$store_current_desc outside"
 echo " "
-echo "                         Work"
-echo "                   Temp: ${store_current_temp}${fahrenheit}"
-echo "             Feels Like: ${store_feels_like}${fahrenheit}"
-echo "                  $store_current_desc outside"
+center "Sunrise: $( format_time $sunrise )"
+center "Sunset: $( format_time $sunset )"
 echo " "
-echo "                Sunrise: $( format_time $sunrise )"
-echo "                 Sunset: $( format_time $sunset )"
-echo " "
-echo "                  Quote: $quote"
+center "Quote: $quote"
 echo " "
 echo " "
-echo "            Kanye Quote: $kanye_quote"
+center "Kanye Quote: $kanye_quote"
 echo " "
 
 
