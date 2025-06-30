@@ -59,6 +59,7 @@ fahrenheit="°F"
 am="AM"
 pm="PM"
 
+echo " "
 figlet -c -f 'ANSI Shadow' -t WEATHER
 center "$( format_date $time )"
 echo " "
