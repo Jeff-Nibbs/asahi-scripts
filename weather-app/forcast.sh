@@ -13,6 +13,16 @@ nesw() {
   echo "$maths"
 }
 
+center() {
+    value="$1"
+    width=$(( ( COLUMNS - ${#value} ) / 2 ))
+    if (( width > 0 )); then
+        printf "%*s%s\n" "$width" "" "$value"
+    else
+        echo "$value"
+    fi
+}
+
 find_heading() {
   if [[ $1 == 0 ]]; then
     echo "North"
@@ -49,13 +59,14 @@ do
   temp_imperial="°F"
   wind_imperial="mph"
 
+
   echo " "
-  echo "$( date -d @$time "+| %a %b %d ~ %I:%M %p |" )"
+  center "$( date -d @$time "+| %a %b %d ~ %I:%M %p |" )"
   echo " "
-  echo "       Temp: ${temp}${temp_imperial}"
-  echo " Feels Like: ${feels_like}${temp_imperial}"
-  echo " Wind Speed: ${windSpeed}${wind_imperial} ${direction}"
-  echo "      $desc"
+  center "Temp: ${temp}${temp_imperial}"
+  center "Feels Like: ${feels_like}${temp_imperial}"
+  center "Wind Speed: ${windSpeed}${wind_imperial} ${direction}"
+  center "$desc"
   echo " "
 done
 
