@@ -19,7 +19,7 @@ fi
 
 DATA=$(upower -i "$BATTERY_PATH")
 
-TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
+TIMESTAMP=$(date '+%m-%d-%Y %I:%M:%S %p')
 PERCENTAGE=$(echo "$DATA" | grep 'percentage' | awk '{print $2}' | tr -d '%')
 CAPACITY=$(echo "$DATA" | grep 'capacity' | awk '{print $2}' | tr -d '%')
 STATE=$(echo "$DATA" | grep 'state' | awk '{print $2}')
