@@ -1,2 +1,8 @@
 Timestamp,Percentage,Capacity,State,Wear_Level%
 07-02-2025 09:18:06 PM,57,81.5381,charging,18.5
+07-02-2025 10:00:00 PM,86,81.5381,charging,18.5
+07-02-2025 11:00:00 PM,100,81.5381,fully-charged,18.5
+07-03-2025 04:00:00 AM,100,84.7102,discharging,15.3
+07-03-2025 03:22:41 PM,71,84.5048,discharging,15.5
+07-03-2025 03:22:47 PM,71,84.5048,discharging,15.5
+07-03-2025 04:00:00 PM,58,84.5276,discharging,15.5
