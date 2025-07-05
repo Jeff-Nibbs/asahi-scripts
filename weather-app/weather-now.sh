@@ -16,6 +16,16 @@ center() {
     fi
 }
 
+check () {
+    val="$1"
+    length=${#val}
+    width=$(( COLUMNS - 10 ))
+    if (( length > COLUMNS )); then
+        center "Naw dawg this quote too long"
+    else
+        center "$val"
+    fi
+}
 
 format_time () {
   echo "$( date -d @$1 '+%I:%M %p' )"
@@ -84,10 +94,10 @@ echo " "
 center "Sunrise: $( format_time $sunrise )"
 center "Sunset: $( format_time $sunset )"
 echo " "
-center "Quote: $quote"
+check "Quote: $quote"
 echo " "
 echo " "
-center "Kanye Quote: $kanye_quote"
+check "Kanye Quote: $kanye_quote"
 echo " "
 
 
