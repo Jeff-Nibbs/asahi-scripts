@@ -2,8 +2,11 @@
 
 
 # ===== Config =====
-REPO_PATH="$HOME/asahi-scripts"
+REPO_PATH="/home/mrmans/asahi-scripts/"
 BRANCH="main"
+
+# ===== Go to repo =====
+cd "$REPO_PATH" || { echo "❌ Repo not found at $REPO_PATH"; exit 1; }
 
 # ===== Determine Emoji Based on File Types =====
 if git diff --name-only | grep -E '\.(js|ts|py|sh|rb|go|cpp|c)$' > /dev/null; then
@@ -27,17 +30,14 @@ fi
 # ===== Commit Message with Emoji =====
 COMMIT_MSG="$EMOJI Auto-commit on $(date '+%Y-%m-%d %H:%M:%S')"
 
-# ===== Go to repo =====
-cd "$REPO_PATH" || { echo "❌ Repo not found at $REPO_PATH"; exit 1; }
-
 # ===== Git status check =====
 if git diff --quiet && git diff --cached --quiet; then
   echo "✅ No changes to commit."
   exit 0
 fi
-
 # ===== Stage and commit =====
-git add -A
+git add .
+
 git commit -m "$COMMIT_MSG"
 
 # ===== Push using SSH =====
