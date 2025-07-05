@@ -36,6 +36,8 @@ if git diff --quiet && git diff --cached --quiet; then
   exit 0
 fi
 # ===== Stage and commit =====
+git status
+
 git add .
 
 git commit -m "$COMMIT_MSG"
