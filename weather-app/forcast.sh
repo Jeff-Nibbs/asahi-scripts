@@ -45,8 +45,10 @@ do
  
   temp=$( cat $folder_path/cahe_forcast.txt | jq ".list.[$i | tonumber].main.temp" )
   
+  max_temp=$( cat $folder_path/cahe_forcast.txt | jq ".list.[$i | tonumber].main.temp_max" )
+
   desc=$( cat $folder_path/cahe_forcast.txt | jq ".list.[$i | tonumber].weather.[0].description" )
-  
+   
   windSpeed=$( cat $folder_path/cahe_forcast.txt | jq ".list.[$i | tonumber].wind.speed" )
  
   windDirection=$( cat $folder_path/cahe_forcast.txt | jq ".list.[$i | tonumber].wind.deg" )
@@ -65,6 +67,7 @@ do
   echo " "
   center "Temp: ${temp}${temp_imperial}"
   center "Feels Like: ${feels_like}${temp_imperial}"
+  center "Max Temp: ${max_temp}${temp_imperial}"
   center "Wind Speed: ${windSpeed}${wind_imperial} ${direction}"
   center "$desc"
   echo " "
