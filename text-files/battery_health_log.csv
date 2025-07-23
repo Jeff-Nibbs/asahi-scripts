@@ -47,3 +47,6 @@ Timestamp,Percentage,Capacity,State,Wear_Level%
 07-20-2025 07:56:39 AM,11,77.5217,charging,22.5
 07-20-2025 08:00:00 AM,14,77.5217,charging,22.5
 07-20-2025 07:11:20 PM,77,77.4532,discharging,22.5
+07-20-2025 11:00:01 PM,58,77.4989,discharging,22.5
+07-21-2025 01:00:00 AM,12,77.5445,charging,22.5
+07-21-2025 11:00:00 PM,66,82.6107,discharging,17.4

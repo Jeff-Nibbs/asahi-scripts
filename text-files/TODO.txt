@@ -1,4 +1,4 @@
 [] Make the API routes for the front end and test them
-[] Buy flipper zero
 [] Make plans for massage
 [] Make middleware and auths
+[] Get addUser and user auth to work
