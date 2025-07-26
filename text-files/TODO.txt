@@ -1,4 +1,3 @@
-[] Make the API routes for the front end and test them
 [] Make plans for massage
 [] Make middleware and auths
 [] Get addUser and user auth to work
