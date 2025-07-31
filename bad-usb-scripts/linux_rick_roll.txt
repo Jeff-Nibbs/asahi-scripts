@@ -1,1 +1,8 @@
-ID 
+ID 05ac:0220 Apple:Keyboard
+
+REM This is for my linux side
+DELAY 500
+GUI ENTER
+DELAY 1000
+STRINGLN xdg-open https://www.youtube.com/watch?v=xvFZjo5PgG0&list=RDxvFZjo5PgG0&start_radio=1
+
